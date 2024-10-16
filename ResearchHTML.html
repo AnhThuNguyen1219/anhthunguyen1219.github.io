@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
         <title>Research</title>
     </head>
 
     <body>
-        <h1>This is a Heading</h1>
-        <p>This is a paragraph.</p>
+        <div>Hello World</div>
+        <div class="survey"></div>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                console.log("aaa")
+                liff
+                    .init({ liffId: process.env.LIFF_ID })
+                    .then(() => {
+                        if (! liff.isLoggedIn()) {
+                            liff.login()
+                        }
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            });
+        </script>
     </body>
 </html>
