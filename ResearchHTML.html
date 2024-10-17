@@ -19,6 +19,7 @@
                         if (! liff.isLoggedIn()) {
                             liff.login()
                         }
+                        localStorage.setItem('line_uid', liff.getProfile())
                     })
                     .catch((error) => {
                         console.log(error)
@@ -48,8 +49,8 @@
         <!-- End of CDP Web Insight script -->
 
         <script>
-            document.querySelector('#LineUID').addEventListener("load", function() {
-                console.log("aaa")
+            document.querySelector('[id^="Antsomi-content-cdp-media"]').addEventListener("load", function() {
+                console.log("aaa");
             });
         </script>
     </body>
