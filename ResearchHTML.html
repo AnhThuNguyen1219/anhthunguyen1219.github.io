@@ -12,8 +12,9 @@
         
         <script>
             document.addEventListener("DOMContentLoaded", function() {
+                console.log("aaa")
                 liff
-                    .init({ liffId: '2006455072-YkMDXbdA'})
+                    .init({ liffId: '2006455072-YkMDXbdA' })
                     .then(() => {
                         if (! liff.isLoggedIn()) {
                             liff.login()
@@ -24,25 +25,32 @@
                     })
             });
         </script>
+
         <!-- CDP Web Insight script -->
-<script type = "text/javascript" >
-    var _portalId = "564890345"; // Portal DTVN CDP 
-    var _propId = "564991998"; 
-    var _ATM_TRACKING_ASSOCIATE_UTM = 1 ; // https://hr.dac-datatech.vn/requestoff/login 
- (function() {
-     var w = window;
-     if (w.web_event) return;
-     var a = window.web_event = function() {
-         a.queue.push(arguments);
-     }
-     a.propId = _propId;
-     a.track = a;
-     a.queue = [];
-     var e = document.createElement("script");
-     e.type = "text/javascript", e.async = !0, e.src = "//st-a.cdp.asia/insight.js";
-     var t = document.getElementsByTagName("script")[0];
-     t.parentNode.insertBefore(e, t)
- })(); </script>
- <!-- End of CDP Web Insight script -->
+        <script type = "text/javascript" >
+            var _portalId = "564890345"; // Portal DTVN CDP 
+            var _propId = "564991998"; 
+            var _ATM_TRACKING_ASSOCIATE_UTM = 1 ; // https://hr.dac-datatech.vn/requestoff/login 
+        (function() {
+            var w = window;
+            if (w.web_event) return;
+            var a = window.web_event = function() {
+                a.queue.push(arguments);
+            }
+            a.propId = _propId;
+            a.track = a;
+            a.queue = [];
+            var e = document.createElement("script");
+            e.type = "text/javascript", e.async = !0, e.src = "//st-a.cdp.asia/insight.js";
+            var t = document.getElementsByTagName("script")[0];
+            t.parentNode.insertBefore(e, t)
+        })(); </script>
+        <!-- End of CDP Web Insight script -->
+
+        <script>
+            document.querySelector('[id^="Antsomi-content-cdp-media"]').addEventListener("load", function() {
+                console.log("aaa")
+            });
+        </script>
     </body>
 </html>
