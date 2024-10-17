@@ -12,9 +12,8 @@
         
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-                console.log("aaa")
                 liff
-                    .init({ liffId: process.env.LIFF_ID })
+                    .init({ liffId: '2006455072-YkMDXbdA'})
                     .then(() => {
                         if (! liff.isLoggedIn()) {
                             liff.login()
