@@ -16,9 +16,7 @@
                         if (! liff.isLoggedIn()) {
                             liff.login();
                         }
-                    })
-                    .then(data => {
-                        console.log(data.context.userId);
+                        const profile = await liff.getProfile();
                     })
                     .catch((err) => {
                         console.log(err);
