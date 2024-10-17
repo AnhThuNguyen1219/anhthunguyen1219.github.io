@@ -17,7 +17,7 @@
                             liff.login();
                         }
                         const profile = await liff.getProfile();
-                        localStorage.setItem('displayName', profile.displayName);
+                        localStorage.setItem('LineName', profile.displayName);
                         localStorage.setItem('LineUID', profile.userId);
                     })
                     .catch((err) => {
