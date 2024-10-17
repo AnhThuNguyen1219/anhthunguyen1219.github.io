@@ -2,7 +2,6 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
         <title>Research</title>
     </head>
 
@@ -10,8 +9,8 @@
         <div>Hello World</div>
         <div class="survey"></div>
         
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
+        <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
+        <script type="text/javascript">
                 liff.init({ liffId: '2006455072-YkMDXbdA' })
                     .then(async () => {
                     if (liff.isLoggedIn()) {
@@ -22,8 +21,7 @@
                     })
                     .catch((err) => {
                         console.log(err);
-                    })
-            });
+                    });
         </script>
 
         <!-- CDP Web Insight script -->
