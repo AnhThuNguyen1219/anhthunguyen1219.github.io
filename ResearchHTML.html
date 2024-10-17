@@ -12,17 +12,16 @@
         
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-                console.log("aaa")
-                liff
-                    .init({ liffId: '2006455072-YkMDXbdA' })
-                    .then(() => {
-                        if (! liff.isLoggedIn()) {
-                            liff.login()
-                        }
-                        localStorage.setItem('line_uid', liff.getProfile())
+                liff.init({ liffId: '2006455072-YkMDXbdA' })
+                    .then(async () => {
+                    if (liff.isLoggedIn()) {
+                        console.log(liff.getProfile());
+                    } else {
+                        liff.login();
+                    }
                     })
-                    .catch((error) => {
-                        console.log(error)
+                    .catch((err) => {
+                        console.log(err);
                     })
             });
         </script>
@@ -48,10 +47,13 @@
         })(); </script>
         <!-- End of CDP Web Insight script -->
 
+<<<<<<< HEAD
+=======
         <script>
             document.querySelector('[id^="Antsomi-content-cdp-media"]').addEventListener("load", function() {
                 console.log("aaa");
             });
         </script>
+>>>>>>> d9f2d022808ebd113123bc7def42956ff6f63bdb
     </body>
 </html>
