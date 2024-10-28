@@ -17,7 +17,7 @@
                             liff.login();
                         }
                         const profile = await liff.getProfile();
-                        const friendShip = await liff.getProfile();
+                        const friendShip = await liff.getFriendship()();
                         localStorage.setItem('LineName', profile.displayName);
                         localStorage.setItem('LineUID', profile.userId);
                         console.log(friendShip);
