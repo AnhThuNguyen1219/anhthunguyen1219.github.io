@@ -49,8 +49,8 @@
                         else {
                             
                             div.innerHTML = "Please add friend to submit this survey!";
-                            survey_div = document.querySelector("id^='Antsomi-cdp-media'");
-                            survey_div.remove();
+                            var survey_div = document.querySelector("[id^='Antsomi-cdp-media']");
+                            survey_div.remove();;
                         } 
                     })
                     .catch((err) => {
