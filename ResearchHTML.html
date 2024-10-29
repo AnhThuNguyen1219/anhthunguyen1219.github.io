@@ -4,16 +4,20 @@
         <meta charset="UTF-8">
         <title>Research</title>
     </head>
+    
 
     <body>
         <div class="survey"></div>
-
         <script src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js" type="text/javascript"></script>
         <script type="text/javascript">
-                        var _portalId = "564890345"; // Portal DTVN CDP 
+            var _portalId = "564890345"; // Portal DTVN CDP 
             var _propId = "564991998"; 
             var _ATM_TRACKING_ASSOCIATE_UTM = 1 ; // https://hr.dac-datatech.vn/requestoff/login 
+
             var div = document.getElementsByClassName("survey")[0];
+            var addFrATag = document.createElement("a");
+            var addFrImgTag = document.createElement("img");
+
             liff.init({ liffId: '2006455072-YkMDXbdA' })
                 .then(async () => {
                     if (! liff.isLoggedIn()) {
@@ -24,25 +28,36 @@
                     if(friendShip.friendFlag){
                         localStorage.setItem('LineName', profile.displayName);
                         localStorage.setItem('LineUID', profile.userId);
+
+                        //Start of CDP Web Insight script
                         (function() {
-                var w = window;
-                if (w.web_event) return;
-                var a = window.web_event = function() {
-                    a.queue.push(arguments);
-                }
-                a.propId = _propId;
-                a.track = a;
-                a.queue = [];
-                var e = document.createElement("script");
-                e.type = "text/javascript", e.async = !0, e.src = "//st-a.cdp.asia/insight.js";
-                var t = document.getElementsByTagName("script")[0];
-                t.parentNode.insertBefore(e, t)
-            })();
+                            var w = window;
+                            if (w.web_event) return;
+                            var a = window.web_event = function() {
+                                a.queue.push(arguments);
+                            }
+                            a.propId = _propId;
+                            a.track = a;
+                            a.queue = [];
+                            var e = document.createElement("script");
+                            e.type = "text/javascript", e.async = !0, e.src = "//st-a.cdp.asia/insight.js";
+                            var t = document.getElementsByTagName("script")[0];
+                            t.parentNode.insertBefore(e, t)
+                        })();
+                        //End of CDP Web Insight script
                     }
                     else {
                         div.innerHTML = "Please add friend to submit this survey!";
-                        var survey_div = document.querySelector("[id^='Antsomi-cdp-media']");
-                        survey_div.remove();
+                        addFrATag.href = "https://lin.ee/o7oWNRx";
+
+                        addFrImgTag.src = "https://scdn.line-apps.com/n/line_add_friends/btn/en.png";
+                        addFrImgTag.alt="Add friend";
+                        addFrImgTag.height="36";
+                        addFrImgTag.border="0"
+
+
+                        document.body.append(addFrATag);
+                        addFrATag.append(addFrImgTag);
                     } 
                 })
                 .catch((err) => {
@@ -52,7 +67,7 @@
 
 
         </script>
-        <!-- End of CDP Web Insight script -->
+        
 
     </body>
 </html>
