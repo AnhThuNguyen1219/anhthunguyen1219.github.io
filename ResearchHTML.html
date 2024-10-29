@@ -25,7 +25,19 @@
                             localStorage.setItem('LineUID', profile.userId);
                                         // CDP Web Insight script 
 
-                var _portalId = "564890345"; // Portal DTVN CDP 
+            // End of CDP Web Insight script
+                        }
+                        else {
+                            var div = document.getElementsByClassName("survey")[0];
+                            div.innerHTML = "Please add friend to submit this survey!";
+                        } 
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+        </script>
+        <script type="text/javascript">
+            var _portalId = "564890345"; // Portal DTVN CDP 
                 var _propId = "564991998"; 
                 var _ATM_TRACKING_ASSOCIATE_UTM = 1 ; // https://hr.dac-datatech.vn/requestoff/login 
                 (function() {
@@ -42,17 +54,6 @@
                     var t = document.getElementsByTagName("script")[0];
                     t.parentNode.insertBefore(e, t)
                 })();
-
-            // End of CDP Web Insight script
-                        }
-                        else {
-                            var div = document.getElementsByClassName("survey")[0];
-                            div.innerHTML = "Please add friend to submit this survey!";
-                        } 
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    });
         </script>
         <!-- End of CDP Web Insight script -->
 
