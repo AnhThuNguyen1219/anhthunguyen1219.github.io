@@ -15,41 +15,40 @@
                 .then(async () => {
                     if (!liff.isLoggedIn()) {
                         liff.login();
-                    } else {
-                        const profile = await liff.getProfile();
-                        const friendShip = await liff.getFriendship();
-                        if (friendShip.friendFlag) {
-                            localStorage.setItem('LineName', profile.displayName);
-                            localStorage.setItem('LineUID', profile.userId);
-        
-                            // CDP Web Insight script
-                            var _portalId = "564890345"; // Portal DTVN CDP 
-                            var _propId = "564991998"; 
-                            var _ATM_TRACKING_ASSOCIATE_UTM = 1;
-        
-                            (function() {
-                                var w = window;
-                                if (w.web_event) return;
-                                var a = window.web_event = function() {
-                                    a.queue.push(arguments);
-                                }
-                                a.propId = _propId;
-                                a.track = a;
-                                a.queue = [];
-                                var e = document.createElement("script");
-                                e.type = "text/javascript"; 
-                                e.async = true; 
-                                e.src = "//st-a.cdp.asia/insight.js";
-                                var t = document.getElementsByTagName("script")[0];
-                                t.parentNode.insertBefore(e, t);
-                            })();
-        
-                        } else {
-                            div.innerHTML = "Please add friend to submit this survey!";
-                            var survey_div = document.querySelector("[id^='Antsomi-cdp-media']");
-                            if (survey_div) {
-                                survey_div.remove();
+                    }
+                    const profile = await liff.getProfile();
+                    const friendShip = await liff.getFriendship();
+                    if (friendShip.friendFlag) {
+                        localStorage.setItem('LineName', profile.displayName);
+                        localStorage.setItem('LineUID', profile.userId);
+    
+                        // CDP Web Insight script
+                        var _portalId = "564890345"; // Portal DTVN CDP 
+                        var _propId = "564991998"; 
+                        var _ATM_TRACKING_ASSOCIATE_UTM = 1;
+    
+                        (function() {
+                            var w = window;
+                            if (w.web_event) return;
+                            var a = window.web_event = function() {
+                                a.queue.push(arguments);
                             }
+                            a.propId = _propId;
+                            a.track = a;
+                            a.queue = [];
+                            var e = document.createElement("script");
+                            e.type = "text/javascript"; 
+                            e.async = true; 
+                            e.src = "//st-a.cdp.asia/insight.js";
+                            var t = document.getElementsByTagName("script")[0];
+                            t.parentNode.insertBefore(e, t);
+                        })();
+    
+                    } else {
+                        div.innerHTML = "Please add friend to submit this survey!";
+                        var survey_div = document.querySelector("[id^='Antsomi-cdp-media']");
+                        if (survey_div) {
+                            survey_div.remove();
                         }
                     }
                 })
