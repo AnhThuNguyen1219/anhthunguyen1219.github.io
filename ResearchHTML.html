@@ -21,18 +21,7 @@
                     if(friendShip.friendFlag){
                         localStorage.setItem('LineName', profile.displayName);
                         localStorage.setItem('LineUID', profile.userId);
-                    }
-                    else {
-                        div.innerHTML = "Please add friend to submit this survey!";
-                        var survey_div = document.querySelector("[id^='Antsomi-cdp-media']");
-                        survey_div.remove();
-                    } 
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        
-            var _portalId = "564890345"; // Portal DTVN CDP 
+                        var _portalId = "564890345"; // Portal DTVN CDP 
             var _propId = "564991998"; 
             var _ATM_TRACKING_ASSOCIATE_UTM = 1 ; // https://hr.dac-datatech.vn/requestoff/login 
             (function() {
@@ -49,6 +38,18 @@
                 var t = document.getElementsByTagName("script")[0];
                 t.parentNode.insertBefore(e, t)
             })();
+                    }
+                    else {
+                        div.innerHTML = "Please add friend to submit this survey!";
+                        var survey_div = document.querySelector("[id^='Antsomi-cdp-media']");
+                        survey_div.remove();
+                    } 
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        
+            
         </script>
         <!-- End of CDP Web Insight script -->
 
