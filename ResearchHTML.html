@@ -18,7 +18,6 @@
             var _ATM_TRACKING_ASSOCIATE_UTM = 1 ;
 
             var div = document.getElementsByClassName("survey")[0];
-            var addITag = document.createElement("i");
 
             liff.init({ liffId: '2006455072-YkMDXbdA' }) //Liff ID when add a LIFF applications
                 .then(async () => {
@@ -47,12 +46,8 @@
                         //End of CDP Web Insight script
                     }
                     else {
-                        addITag.className = "fa fa-info-circle";
-                        addITag.style='margin-right:5px;';
-
-                        div.append(addITag);
-                        div.style = "font-size:20px;color: #004085;background-color: #cce5ff;border-color: #b8daff;padding:10px;margin:5px;"
-                        div.innerHTML = "Please add friend to submit this survey!";
+                        div.style = "font-size:30px;color: #004085;background-color: #cce5ff;border-color: #b8daff;padding:10px;margin:5px;"
+                        div.innerHTML = "<i class='fa fa-info-circle' style='margin-right:10px;'></i>Please follow to submit this survey!";
                     }
                 })
                 .catch((err) => {
