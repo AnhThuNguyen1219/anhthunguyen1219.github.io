@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Research</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     
 
@@ -15,6 +16,10 @@
             var _portalId = "564890345"; // Portal Bonaventura
             var _propId = "564991998"; //Event for 
             var _ATM_TRACKING_ASSOCIATE_UTM = 1 ;
+
+            var div = document.getElementsByClassName("survey")[0];
+            var addITag = document.createElement("i");
+
             liff.init({ liffId: '2006455072-YkMDXbdA' }) //Liff ID when add a LIFF applications
                 .then(async () => {
                     if (! liff.isLoggedIn()) {
@@ -42,6 +47,11 @@
                         //End of CDP Web Insight script
                     }
                     else {
+                        addITag.className = "fa fa-info-circle";
+                        addITag.style='margin-right:5px;';
+
+                        div.append(addITag);
+                        div.style = "font-size:20px;color: #004085;background-color: #cce5ff;border-color: #b8daff;padding:10px;margin:5px;"
                         div.innerHTML = "Please add friend to submit this survey!";
                     }
                 })
