@@ -12,44 +12,43 @@
         
         <!-- Start of Line script -->
         <script type="text/javascript">
+            var _portalId = "564890345"; // Portal Bonaventura
+            var _propId = "564991998"; //Event for 
+            var _ATM_TRACKING_ASSOCIATE_UTM = 1 ;
             liff.init({ liffId: '2006455072-YkMDXbdA' }) //Liff ID when add a LIFF applications
                 .then(async () => {
                     if (! liff.isLoggedIn()) {
                         liff.login();
                     }
                     const profile = await liff.getProfile();
-                    localStorage.setItem('LineUID', profile.userId);
+                    const friendShip = await liff.getFriendship();
+                    if(friendShip.friendFlag){
+                        localStorage.setItem('LineUID', profile.userId);
+                        //Start of CDP Web Insight script
+                        (function() {
+                            var w = window;
+                            if (w.web_event) return;
+                            var a = window.web_event = function() {
+                                a.queue.push(arguments);
+                            }
+                            a.propId = _propId;
+                            a.track = a;
+                            a.queue = [];
+                            var e = document.createElement("script");
+                            e.type = "text/javascript", e.async = !0, e.src = "//st-a.cdp.asia/insight.js";
+                            var t = document.getElementsByTagName("script")[0];
+                            t.parentNode.insertBefore(e, t)
+                        })();
+                        //End of CDP Web Insight script
+                    }
+                    else {
+                        div.innerHTML = "Please add friend to submit this survey!";
+                    }
                 })
                 .catch((err) => {
                     console.log(err);
                 });
         </script>
         <!-- End of Line script -->
-
-        <!-- Start of CDP Web Insight script -->
-        <script type="text/javascript">
-            var _portalId = "564890345"; // Portal Bonaventura
-            var _propId = "564991998"; //Event for 
-            var _ATM_TRACKING_ASSOCIATE_UTM = 1 ;
-            (function() {
-                var w = window;
-                if (w.web_event) return;
-                var a = window.web_event = function() {
-                    a.queue.push(arguments);
-                }
-                a.propId = _propId;
-                a.track = a;
-                a.queue = [];
-                var e = document.createElement("script");
-                e.type = "text/javascript", e.async = !0, e.src = "//st-a.cdp.asia/insight.js";
-                var t = document.getElementsByTagName("script")[0];
-                t.parentNode.insertBefore(e, t)
-            })();
-              /** start tracking event: view_pageview */
-            
-  /** end block */
-        </script>
-        <!-- End of CDP Web Insight script -->
-
     </body>
 </html>
