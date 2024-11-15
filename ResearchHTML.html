@@ -14,7 +14,7 @@
         <!-- Start of Line script -->
         <script type="text/javascript">
             var _portalId = "564890345"; // Portal Bonaventura
-            var _propId = "564991998"; //Event for 
+            var _propId = "564995137"; //Event for 
             var _ATM_TRACKING_ASSOCIATE_UTM = 1 ;
 
             var div = document.getElementsByClassName("survey")[0];
@@ -44,6 +44,17 @@
                             t.parentNode.insertBefore(e, t)
                         })();
                         //End of CDP Web Insight script
+
+                        /** start tracking event: view_pageview */
+                        web_event.track("pageview", "view", {
+                            dims: {
+                                "users": {
+                                    "user_id" : profile.userId
+                                }
+                            },
+                        });
+                        /** end block */
+
                     }
                     else {
                         div.style = "font-size:30px;color: #004085;background-color: #cce5ff;border-color: #b8daff;padding:10px;margin:5px;"
