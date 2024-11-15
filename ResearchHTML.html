@@ -44,16 +44,12 @@
                             t.parentNode.insertBefore(e, t)
                         })();
                         //End of CDP Web Insight script
-
-                        /** start tracking event: view_pageview */
-                        web_event.track("pageview", "view", {
-                            dims: {
-                                "users": {
-                                    "user_id" : profile.userId
-                                }
-                            },
-                        });
-                        /** end block */
+                        customPostData = data => {
+                            if (!data) return data;
+                            data.eventData.dims.users.user_id = uid;
+                            return data;
+                        };
+                        customPostData();
 
                     }
                     else {
